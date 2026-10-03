@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    database: prestamx
+    schema: raw
+    tables:
+      - name: usuarios
+      - name: creditos
+      - name: pagos
