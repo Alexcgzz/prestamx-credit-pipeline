@@ -1,6 +1,6 @@
 with fuente as (
 
-    select * from {{ source('raw', 'usuarios') }}
+    select distinct * from {{ source('raw', 'usuarios') }}
 
 ),
 
