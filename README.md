@@ -2,8 +2,6 @@
 
 Pipeline de datos **ELT en la nube** para una fintech de credito ficticia. Toma datos crudos de una financiera, los carga sin transformar a un data warehouse, y los modela por capas con dbt para responder preguntas de negocio clave como la **tasa de morosidad** y el **saldo en riesgo**.
 
-> Proyecto de portafolio para el rol de **Data Engineer / Analytics Engineer**. Los datos son sinteticos, generados con `Faker` para simular imperfecciones y comportamiento de pago realista.
-
 ---
 
 ## Contexto de negocio
@@ -78,11 +76,11 @@ A diferencia de un flujo batch simple, este pipeline sigue el patron **ELT en 3 
 
 ## Calidad de datos (tests de dbt)
 
-El proyecto incluye tests automáticos que validan la calidad en cada ejecución:
+El proyecto incluye tests automaticos que validan la calidad en cada ejecucion:
 - `unique` y `not_null` en las llaves primarias.
-- `accepted_values` en las columnas categóricas (segmento, producto) para confirmar la estandarización.
+- `accepted_values` en las columnas categoricas (segmento, producto) para confirmar la estandarizacion.
 
-**Hallazgo real:** el test `unique` detectó **25 usuarios duplicados** en la fuente; se resolvieron con una deduplicación en la capa staging. (10/10 tests en verde.)
+**Hallazgo real:** el test `unique` detecto **25 usuarios duplicados** en la fuente; se resolvieron con una deduplicacion en la capa staging. (10/10 tests en verde.)
 
 ---
 
@@ -104,7 +102,7 @@ El mart final responde directo las preguntas #1 y #2 del cliente: **tasa de moro
 
 ## Notas y limitaciones
 
-- Los datos son **sintéticos** (generados con `Faker`), diseñados con imperfecciones realistas para practicar el pipeline. No representan datos reales de ninguna financiera.
+- Los datos son **sinteticos** (generados con `Faker`), diseñados con imperfecciones realistas para practicar el pipeline. No representan datos reales de ninguna financiera.
 
 ---
 
