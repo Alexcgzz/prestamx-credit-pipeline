@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stg_usuarios
+    columns:
+      - name: usuario_id
+        tests:
+          - unique
+          - not_null
+      - name: segmento
+        tests:
+          - accepted_values:
+              values: ['A', 'B', 'C', 'Desconocido']
+
+  - name: stg_creditos
+    columns:
+      - name: credito_id
+        tests:
+          - unique
+          - not_null
+      - name: usuario_id
+        tests:
+          - not_null
+      - name: producto
+        tests:
+          - accepted_values:
+              values: ['Personal', 'Nómina', 'PyME', 'Desconocido']
+
+  - name: stg_pagos
+    columns:
+      - name: pago_id
+        tests:
+          - unique
+          - not_null
+      - name: credito_id
+        tests:
+          - not_null
